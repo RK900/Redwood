@@ -6,4 +6,7 @@ This repo contains files that make tree data types in Python. Functions include 
 MIT
 
 #To use
-Clone/download the repository. (Will be on PyPI soon)
+Clone/download the repository.
+
+```python
+
