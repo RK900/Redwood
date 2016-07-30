@@ -28,7 +28,7 @@ X = Tree('X')
 X.add_child('Y')
 
 newTree = append_trees(A,X)
-```
+
 The result:
     A
   /   \
@@ -37,4 +37,5 @@ B       C
             X
               \
                 Y
+```
 Note: Redwood is not binary. Nodes can have multiple branches.
