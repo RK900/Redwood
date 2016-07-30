@@ -1,6 +1,6 @@
 # Redwood
 
-This repo contains files that make tree data types in Python. Functions include reading trees from files, creating trees, adding trees, merging trees, and writing trees.
+Dealing with tree data types in Python. Functions include reading trees from files, creating trees, adding trees, merging trees, and writing trees.
 
 ###License
 MIT
@@ -16,7 +16,7 @@ tree1.add_child('left node')
 tree1.add_child('right node')
 ```
 
-##Merging Trees
+##Appending Trees
 ```python
 from Redwood import Tree
 from Redwood import append_trees
@@ -37,5 +37,31 @@ B       C
             X
               \
                 Y
+```
+##Merging Trees
+This function merges trees at the highest shared node
+```python
+from Redwood import Tree
+from Redwood import merge_trees
+tree1 = Tree('A')
+B = A.add_child('B')
+C = A.add_child('C')
+D = C.add_child('D')
+
+tree2 = Tree('C')
+E = tree2.add_child('E')
+F = E.add_child('F')
+
+newTree = merge_trees(A,X)
+
+The result:
+    A
+  /   \
+B       C
+      /   \
+     D      E
+              \
+                F
+
 ```
 Note: Redwood is not binary. Nodes can have multiple branches.
