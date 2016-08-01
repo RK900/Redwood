@@ -11,6 +11,7 @@ Clone/download the repository.
 ##Making a Simple Tree
 ```python
 from Redwood import Tree
+
 tree1 = Tree('this is the root node')
 tree1.add_child('left node')
 tree1.add_child('right node')
@@ -20,6 +21,7 @@ tree1.add_child('right node')
 ```python
 from Redwood import Tree
 from Redwood import append_trees
+
 A = Tree('A')
 A.add_child('B')
 A.add_child('C')
@@ -43,6 +45,7 @@ This function merges trees at the highest shared node
 ```python
 from Redwood import Tree
 from Redwood import merge_trees
+
 tree1 = Tree('A')
 B = A.add_child('B')
 C = A.add_child('C')
