@@ -51,6 +51,7 @@ D = C.add_child('D')
 tree2 = Tree('C')
 E = tree2.add_child('E')
 F = E.add_child('F')
+G = E.add_child('G')
 
 newTree = merge_trees(A,X)
 
@@ -60,8 +61,8 @@ The result:
 B       C
       /   \
      D      E
-              \
-                F
+           /  \
+          G     F
 
 ```
 Note: Redwood is not binary. Nodes can have multiple branches.
