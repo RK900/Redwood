@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Redwood by RK900</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Redwood</h1>
+        <h2>Dealing with trees in Python</h2>
+        <a href="https://github.com/RK900/Redwood" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="redwood" class="anchor" href="#redwood" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Redwood</h1>
+
+<p>Dealing with tree data types in Python. Functions include reading trees from files, creating trees, adding trees, merging trees, and writing trees.</p>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+
+<p>MIT</p>
+
+<h1>
+<a id="to-use" class="anchor" href="#to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>To use</h1>
+
+<p>Clone/download the repository.</p>
+
+<h2>
+<a id="making-a-simple-tree" class="anchor" href="#making-a-simple-tree" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Making a Simple Tree</h2>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> Redwood <span class="pl-k">import</span> Tree
+
+tree1 <span class="pl-k">=</span> Tree(<span class="pl-s"><span class="pl-pds">'</span>this is the root node<span class="pl-pds">'</span></span>)
+tree1.add_child(<span class="pl-s"><span class="pl-pds">'</span>left node<span class="pl-pds">'</span></span>)
+tree1.add_child(<span class="pl-s"><span class="pl-pds">'</span>right node<span class="pl-pds">'</span></span>)</pre></div>
+
+<h2>
+<a id="appending-trees" class="anchor" href="#appending-trees" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Appending Trees</h2>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> Redwood <span class="pl-k">import</span> Tree
+<span class="pl-k">from</span> Redwood <span class="pl-k">import</span> append_trees
+
+<span class="pl-c1">A</span> <span class="pl-k">=</span> Tree(<span class="pl-s"><span class="pl-pds">'</span>A<span class="pl-pds">'</span></span>)
+<span class="pl-c1">A</span>.add_child(<span class="pl-s"><span class="pl-pds">'</span>B<span class="pl-pds">'</span></span>)
+<span class="pl-c1">A</span>.add_child(<span class="pl-s"><span class="pl-pds">'</span>C<span class="pl-pds">'</span></span>)
+
+<span class="pl-c1">X</span> <span class="pl-k">=</span> Tree(<span class="pl-s"><span class="pl-pds">'</span>X<span class="pl-pds">'</span></span>)
+<span class="pl-c1">X</span>.add_child(<span class="pl-s"><span class="pl-pds">'</span>Y<span class="pl-pds">'</span></span>)
+
+newTree <span class="pl-k">=</span> append_trees(<span class="pl-c1">A</span>,<span class="pl-c1">X</span>)
+
+The result:
+    <span class="pl-c1">A</span>
+  <span class="pl-k">/</span>   \
+<span class="pl-c1">B</span>       <span class="pl-c1">C</span>
+           \
+            <span class="pl-c1">X</span>
+              \
+                <span class="pl-c1">Y</span></pre></div>
+
+<h2>
+<a id="merging-trees" class="anchor" href="#merging-trees" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Merging Trees</h2>
+
+<p>This function merges trees at the highest shared node</p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> Redwood <span class="pl-k">import</span> Tree
+<span class="pl-k">from</span> Redwood <span class="pl-k">import</span> merge_trees
+
+tree1 <span class="pl-k">=</span> Tree(<span class="pl-s"><span class="pl-pds">'</span>A<span class="pl-pds">'</span></span>)
+<span class="pl-c1">B</span> <span class="pl-k">=</span> <span class="pl-c1">A</span>.add_child(<span class="pl-s"><span class="pl-pds">'</span>B<span class="pl-pds">'</span></span>)
+<span class="pl-c1">C</span> <span class="pl-k">=</span> <span class="pl-c1">A</span>.add_child(<span class="pl-s"><span class="pl-pds">'</span>C<span class="pl-pds">'</span></span>)
+<span class="pl-c1">D</span> <span class="pl-k">=</span> <span class="pl-c1">C</span>.add_child(<span class="pl-s"><span class="pl-pds">'</span>D<span class="pl-pds">'</span></span>)
+
+tree2 <span class="pl-k">=</span> Tree(<span class="pl-s"><span class="pl-pds">'</span>C<span class="pl-pds">'</span></span>)
+<span class="pl-c1">E</span> <span class="pl-k">=</span> tree2.add_child(<span class="pl-s"><span class="pl-pds">'</span>E<span class="pl-pds">'</span></span>)
+<span class="pl-c1">F</span> <span class="pl-k">=</span> <span class="pl-c1">E</span>.add_child(<span class="pl-s"><span class="pl-pds">'</span>F<span class="pl-pds">'</span></span>)
+<span class="pl-c1">G</span> <span class="pl-k">=</span> <span class="pl-c1">E</span>.add_child(<span class="pl-s"><span class="pl-pds">'</span>G<span class="pl-pds">'</span></span>)
+
+newTree <span class="pl-k">=</span> merge_trees(<span class="pl-c1">A</span>,<span class="pl-c1">X</span>)
+
+The result:
+    <span class="pl-c1">A</span>
+  <span class="pl-k">/</span>   \
+<span class="pl-c1">B</span>       <span class="pl-c1">C</span>
+      <span class="pl-k">/</span>   \
+     <span class="pl-c1">D</span>      <span class="pl-c1">E</span>
+           <span class="pl-k">/</span>  \
+          <span class="pl-c1">G</span>     <span class="pl-c1">F</span>
+</pre></div>
+
+<p>Note: Redwood is not binary. Nodes can have multiple branches.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/RK900/Redwood/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/RK900/Redwood/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/RK900/Redwood"></a> is maintained by <a href="https://github.com/RK900">RK900</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
