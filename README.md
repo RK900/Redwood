@@ -41,7 +41,7 @@ B       C
                 Y
 ```
 ##Merging Trees
-This function merges trees at the highest shared node
+This function merges trees at the highest shared node.
 ```python
 from Redwood import Tree
 from Redwood import merge_trees
