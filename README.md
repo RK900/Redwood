@@ -35,7 +35,7 @@ The result:
     A
   /   \
 B       C
-           \
+          \
             X
               \
                 Y
