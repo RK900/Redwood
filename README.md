@@ -8,10 +8,10 @@ Dealing with tree data types in Python. Functions include reading trees from fil
 ###License
 MIT
 
-#To use
+## To use
 Clone/download the repository.
 
-##Making a Simple Tree
+###Making a Simple Tree
 ```python
 from Redwood import Tree
 
@@ -20,7 +20,7 @@ tree1.add_child('left node')
 tree1.add_child('right node')
 ```
 
-##Appending Trees
+###Appending Trees
 ```python
 from Redwood import Tree
 from Redwood import append_trees
@@ -43,7 +43,7 @@ B       C
               \
                 Y
 ```
-##Merging Trees
+###Merging Trees
 This function merges trees at the highest shared node.
 ```python
 from Redwood import Tree
