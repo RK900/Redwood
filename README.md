@@ -1,4 +1,5 @@
 # Redwood
+[![Github release](https://img.shields.io/badge/release-v0.1-brightgreen.svg)](https://github.com/RK900/Redwood/releases)
 [![Python27](https://img.shields.io/badge/python-2.7-blue.svg)](https://www.python.org/download/releases/2.7/)
 [![License](https://img.shields.io/cocoapods/l/EasyQL.svg?style=flat)](https://github.com/RK900/Redwood/blob/master/LICENSE.txt)
 [![Twitter](https://img.shields.io/badge/twitter-@RohanKoodli-blue.svg?style=flat)](http://twitter.com/RohanKoodli)
