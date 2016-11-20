@@ -7,7 +7,7 @@
 Dealing with tree data types in Python. Functions include reading trees from files, creating trees, adding trees, merging trees, and writing trees.
 
 ###License
-MIT
+Redwood is available under the [MIT License](https://github.com/RK900/Redwood/blob/master/LICENSE.txt).
 
 ## To use
 Clone/download the repository.
