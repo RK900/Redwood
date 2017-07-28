@@ -51,16 +51,16 @@ from Redwood import Tree
 from Redwood import merge_trees
 
 tree1 = Tree('A')
-B = A.add_child('B')
-C = A.add_child('C')
+B = tree1.add_child('B')
+C = tree1.add_child('C')
 D = C.add_child('D')
 
-tree2 = Tree('C')
+tree2 = Tree('C') # subtree of node C in tree1
 E = tree2.add_child('E')
 F = E.add_child('F')
 G = E.add_child('G')
 
-newTree = merge_trees(A,X)
+newTree = merge_trees(tree1,tree2)
 
 The result:
     A
