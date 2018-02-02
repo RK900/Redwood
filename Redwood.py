@@ -8,7 +8,9 @@ Created on Tue Dec 29 11:16:39 2015
             
             
 class Tree(object):#Version 2
-    "Generic tree node."
+    """
+    Tree Node
+    """
     def __init__(self, name='Aves', children=None):
         self.name = name
         self.children = []
@@ -23,11 +25,21 @@ class Tree(object):#Version 2
         return ret
 
     def add_child(self, node):
+        """
+        Adds node
+        :param node: node to be added
+        :return: void
+        """
         self.children.append(node)
 
     def disp_tree(self):
+        """
+        Duplicate method of printing tree
+        :return: Printable representation of a tree
+        """
+
         if self is not None:
-            (print (self.name))
+            print (self.name)
             for child in self.children:
                 #print '---'
                 if child is not None:
@@ -62,6 +74,11 @@ node2.add_child(node3)
 '''
 
 def treefromFile(source):
+    """
+    Reads tree from a TXT file
+    :param source: path
+    :return: void
+    """
     source.replace(',','')
     source = source.split() #Puts words in list
     root = Tree('Aves')
@@ -75,6 +92,12 @@ def treefromFile(source):
 
 
 def merge_trees(tree1,tree2):
+    """
+    Merge 2 trees together
+    :param tree1: Tree 1
+    :param tree2: Tree 2
+    :return: void
+    """
     if (tree1 is not None) and (tree2 is not None):
         mergedTree = Tree('Aves') #root node
         mergedRoot = mergedTree
@@ -122,7 +145,12 @@ def merge_trees(tree1,tree2):
         return mergedRoot   
         
 def append_trees(parent_tree,tree_children):
-    #parent_tree is a Tree and tree_children is a list of tree objects
+    """
+    Adds 2 trees together
+    :param parent_tree: Parent tree
+    :param tree_children: Child tree
+    :return: void
+    """
     if tree_children:
         for j in range(len(tree_children)):
             #print 'j,tree_children[]: ',j, tree_children[j].name
@@ -133,6 +161,12 @@ def append_trees(parent_tree,tree_children):
 
 
 def compare_node(parent_node,child_node): #parent and child are Tree objects
+    """
+    Compares 2 nodes
+    :param parent_node: Node 1
+    :param child_node: Node 2
+    :return: Difference
+    """
     differences = []
     parent = parent_node.name
     child_node = parent_node.children[0]
