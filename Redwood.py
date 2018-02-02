@@ -15,35 +15,35 @@ class Tree(object):#Version 2
         if children is not None:
             for child in children:
                 self.add_child(child)
+
     def __repr__(self, level=0): #Makes printable representation of Tree
         ret = "\t"*level+repr(self.name)+"\n"
         for child in self.children:
             ret += child.__repr__(level+1)
         return ret
+
     def add_child(self, node):
-        #assert isinstance(node, Tree)
         self.children.append(node)
+
     def disp_tree(self):
-        #print '---'
         if self is not None:
-            print self.name
-            #print 'ougadougou'
+            (print (self.name))
             for child in self.children:
                 #print '---'
                 if child is not None:
-                    print '\t',child.disp_tree()
+                    print ('\t', child.disp_tree())
+
     def disp_tree_v2(self,level=0):
         if self is not None:
-            print self.name
-            #print 'ougadougou'
+            print (self.name)
             ret = '\t'*level
             for child in self.children:
-                #print '---'
                 if child is not None:
-                    print child.disp_tree(level+1) 
+                    print (child.disp_tree(level+1))
+
     def iterate(self):
         for i in self.name:
-            print i
+            print (i)
                     
 
 '''                  
@@ -73,9 +73,8 @@ def treefromFile(source):
         
     return root
 
+
 def merge_trees(tree1,tree2):
-    #print '[[[[[[[Inside v3]]]]]]]]]'
-    #qwerty = input('Enter a key ')
     if (tree1 is not None) and (tree2 is not None):
         mergedTree = Tree('Aves') #root node
         mergedRoot = mergedTree
@@ -84,15 +83,11 @@ def merge_trees(tree1,tree2):
         iter2 = tree2.children
         #print 'Start with appending tree1 as is..'
         append_trees(mergedTree, iter1)
-        #print 'Current (merged) parent tree is: '
-        #print mergedTree
 
-        # go thru each level of the tree
         child_iter = iter1
-        while  iter1 and iter2:
+        while iter1 and iter2:
             i = 0            
-            #print 'iter1:', iter1, 'iter2:', iter2          
-            #print 'No.of children is: ', len(child_iter)
+
             children_name_list = []
             for k in range(len(child_iter)):
                 #print 'k =',k
@@ -135,7 +130,8 @@ def append_trees(parent_tree,tree_children):
         parent_tree = parent_tree.children[0]
         tree_children = tree_children[0].children  
 #First version of append_trees
-        
+
+
 def compare_node(parent_node,child_node): #parent and child are Tree objects
     differences = []
     parent = parent_node.name
@@ -155,7 +151,7 @@ def compare_node(parent_node,child_node): #parent and child are Tree objects
         for k in range(i+1,len(child)):
             differences.append(k)
 
-    print len(differences)
+    print (len(differences))
     
 def compare_strains(s1,s2):#both type bio.seq.seq
     differences = []
